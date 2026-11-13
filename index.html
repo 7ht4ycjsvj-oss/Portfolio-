@@ -286,6 +286,49 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opa
 .nmEn{bottom:-.78em;left:-3vw;color:rgba(157,183,232,.34)}
 .nm{margin:2vh 0 11vh}
 @media(max-width:820px){.nmEn{bottom:-.8em;left:-6vw;font-size:16vw}.nm{margin-bottom:9vh}}
+
+/* v7 about */
+.about .scroll{display:block!important}
+.awrap{display:grid;grid-template-columns:auto 1fr;gap:5vw;align-items:center;min-height:100%}
+.me{position:relative;width:min(24vw,330px);margin:0;justify-self:center}
+.me img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;border-radius:2px;position:relative;z-index:1}
+.me::before{content:"";position:absolute;inset:0;border:1px solid rgba(157,183,232,.38);transform:translate(-18px,18px);z-index:0}
+.atext{max-width:640px}
+.about .ttl{font-size:clamp(34px,3.3vw,52px)!important}
+.xh{font-size:15px;font-weight:700;color:var(--acc);margin-top:4.5vh;margin-bottom:6px}
+.xg{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+.xg li{display:flex;gap:12px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--line);font-size:15.5px;font-weight:500}
+.xg li i{font-style:normal;font-family:var(--en);font-size:12.5px;font-weight:600;color:var(--acc)}
+.xg li:last-child{grid-column:1/-1}
+/* skills slide */
+.skills .scroll{display:flex;flex-direction:column;justify-content:center}
+.skg{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:6vh}
+.sk1{position:relative;display:flex;flex-direction:column;gap:14px;justify-content:space-between;min-height:118px;padding:18px 18px 16px;border:1px solid var(--line);border-radius:6px;background:linear-gradient(160deg,rgba(157,183,232,.07),rgba(157,183,232,0) 60%);transition:.4s var(--ease)}
+.sk1:hover{border-color:rgba(157,183,232,.55);transform:translateY(-4px);background:linear-gradient(160deg,rgba(157,183,232,.14),rgba(157,183,232,.02) 70%)}
+.sk1 i{font-style:normal;font-family:var(--en);font-size:12.5px;font-weight:600;color:var(--acc)}
+.sk1 span{font-size:clamp(15px,1.12vw,17.5px);font-weight:600;line-height:1.5}
+.on .sk1{animation:skin .9s var(--ease) both}@keyframes skin{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}.on .sk1:nth-child(1){animation-delay:0.19s}.on .sk1:nth-child(2){animation-delay:0.23s}.on .sk1:nth-child(3){animation-delay:0.27s}.on .sk1:nth-child(4){animation-delay:0.31s}.on .sk1:nth-child(5){animation-delay:0.35s}.on .sk1:nth-child(6){animation-delay:0.39s}.on .sk1:nth-child(7){animation-delay:0.43s}.on .sk1:nth-child(8){animation-delay:0.47s}.on .sk1:nth-child(9){animation-delay:0.51s}.on .sk1:nth-child(10){animation-delay:0.55s}.on .sk1:nth-child(11){animation-delay:0.59s}.on .sk1:nth-child(12){animation-delay:0.63s}.on .sk1:nth-child(13){animation-delay:0.67s}.on .sk1:nth-child(14){animation-delay:0.71s}.on .sk1:nth-child(15){animation-delay:0.75s}
+/* fan 7 */
+.fc{width:13vw;margin:-9vw 0 0 -6.5vw}
+.on .f0{transform:rotate(-33deg)}.on .f1{transform:rotate(-22deg)}.on .f2{transform:rotate(-11deg)}.on .f3{transform:rotate(0)}.on .f4{transform:rotate(11deg)}.on .f5{transform:rotate(22deg)}.on .f6{transform:rotate(33deg)}
+.on .f5{transition-delay:.4s}.on .f6{transition-delay:.48s}
+.fan:hover .f0{transform:rotate(-40deg)}.fan:hover .f6{transform:rotate(40deg)}
+/* swipe hint */
+.swipe{position:absolute;bottom:11vh;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--mute)}
+.on .swipe{transform:translateX(-50%)}
+.swipe .ic{width:16px;height:16px;animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateX(-6px)}}
+@media(max-width:820px){
+  .awrap{grid-template-columns:1fr;gap:30px;min-height:0}
+  .me{width:46vw;margin-top:4px}
+  .xg{grid-template-columns:1fr}
+  .skills .scroll{justify-content:flex-start}
+  .skg{grid-template-columns:1fr 1fr;gap:10px;margin-top:4vh}
+  .sk1{min-height:92px;padding:14px}
+  .sk1 span{font-size:15px}
+  .fc{width:26vw;margin:-16vw 0 0 -13vw}
+  .fan{height:32vh}
+}
 </style>
 </head>
 <body>
@@ -371,16 +414,10 @@ let h = `
   <div class="hi up">أهـــلاً</div>
   <div class="nm"><div class="nmEn">Raneem Alotaibi</div><h1 class="nmAr up t1">رنيـــم العتيبـــي</h1></div>
   <p class="up t2">بين أروقة الإعلام والاتصال أعمل وأتعلّم</p>
-  <div class="who up t3">علاقات عامة وتواصل استراتيجي</div></div></section>
+  <div class="who up t3">علاقات عامة وتواصل استراتيجي</div></div><div class="swipe up t4"><span>اسحب للتنقل</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></div></section>
 
-<section class="slide about"><div class="scroll">
-  <div class="port"><span class="ln"></span><div class="pic"><img src="${I("me")}" alt="رنيم العتيبي"></div></div>
-  <div><div class="ttl up">رنيـــم العتيبـــي</div><div class="role up t1">علاقات عامة وتواصل استراتيجي</div>
-    <p class="copy up t2">خريجة إعلام وعلاقات عامة واتصال تسويقي من جامعة الإمام محمد بن سعود الإسلامية بمرتبة الشرف الأولى، بخبرة عملية تزيد على 3 سنوات. حاصلة على وسام قمم لتمكين القيادات الواعدة، ومهتمة بالاستراتيجية والتخطيط والاتصال المؤسسي وصناعة المبادرات.</p>
-    <div class="acols up t3"><div><h3>خبرة وتجارب عملية</h3><ol class="xp">
-      <li>الاستراتيجية والتخطيط الاتصالي</li><li>العلاقات العامة والاتصال المؤسسي</li><li>الحملات التسويقية وصناعة المحتوى</li><li>إدارة المشاريع والفعاليات</li><li>الشراكات وإدارة أصحاب المصلحة</li></ol></div>
-      <div><h3>مهاراتي</h3><div class="sk"><span>التفكير الاستراتيجي</span><span>تطوير الأفكار</span><span>التخطيط</span><span>إدارة المشاريع</span><span>كتابة المحتوى</span><span>التواصل الفعال</span><span>إعداد الخطط التسويقية</span><span>تحليل السوق والمنافسين</span><span>إدارة منصات التواصل الاجتماعي</span><span>صياغة الرسائل الاتصالية</span><span>إعداد العروض التقديمية</span><span>تنظيم الفعاليات</span><span>بناء الشراكات</span><span>القيادة والعمل الجماعي</span><span>الإلقاء والتقديم</span></div></div></div>
-  </div></div></section>
+<section class="slide about"><div class="scroll"><div class="awrap"><figure class="me up"><img src="${I("me")}" alt="رنيم العتيبي"></figure><div class="atext"><div class="ttl up">رنيـــم العتيبـــي</div><div class="role up t1">علاقات عامة وتواصل استراتيجي</div><p class="copy up t2">خريجة إعلام وعلاقات عامة واتصال تسويقي من جامعة الإمام محمد بن سعود الإسلامية بمرتبة الشرف الأولى، بخبرة عملية تزيد على 3 سنوات. حاصلة على وسام قمم لتمكين القيادات الواعدة، ومهتمة بالاستراتيجية والتخطيط والاتصال المؤسسي وصناعة المبادرات.</p><h3 class="xh up t3">لدي خبرة وتجارب عملية في</h3><ol class="xg up t3"><li><i>01</i><span>الاستراتيجية والتخطيط الاتصالي</span></li><li><i>02</i><span>العلاقات العامة والاتصال المؤسسي</span></li><li><i>03</i><span>الحملات التسويقية وصناعة المحتوى</span></li><li><i>04</i><span>إدارة المشاريع والفعاليات</span></li><li><i>05</i><span>الشراكات وإدارة أصحاب المصلحة</span></li></ol></div></div></div></section>
+<section class="slide skills"><div class="scroll"><div class="hd up"><h2>مهـــاراتي</h2><div class="sm">ما أضيفه لأي فريق</div></div><div class="skg up t2"><div class="sk1"><i>01</i><span>التفكير الاستراتيجي</span></div><div class="sk1"><i>02</i><span>تطوير الأفكار</span></div><div class="sk1"><i>03</i><span>التخطيط</span></div><div class="sk1"><i>04</i><span>إدارة المشاريع</span></div><div class="sk1"><i>05</i><span>كتابة المحتوى</span></div><div class="sk1"><i>06</i><span>التواصل الفعال</span></div><div class="sk1"><i>07</i><span>إعداد الخطط التسويقية</span></div><div class="sk1"><i>08</i><span>تحليل السوق والمنافسين</span></div><div class="sk1"><i>09</i><span>إدارة منصات التواصل الاجتماعي</span></div><div class="sk1"><i>10</i><span>صياغة الرسائل الاتصالية</span></div><div class="sk1"><i>11</i><span>إعداد العروض التقديمية</span></div><div class="sk1"><i>12</i><span>تنظيم الفعاليات</span></div><div class="sk1"><i>13</i><span>بناء الشراكات</span></div><div class="sk1"><i>14</i><span>القيادة والعمل الجماعي</span></div><div class="sk1"><i>15</i><span>الإلقاء والتقديم</span></div></div></div></section>
 
 <section class="slide split"><div class="scroll">
   <div class="txt">${hd("شهـــادتي","الشهادة المهنية")}
@@ -417,7 +454,7 @@ h += rowSlide("شركـــاء الأثر","شراكات","c3",[
   it("pt3","up2up × مداد","فريق up2up التطوعي ونادي مداد الإعلام")]);
 h += `<section class="slide"><div class="scroll">${hd("زيـــارات","زيارات نظّمتها")}
   <div class="lgs up t2">${[5,6,7,8,1,2,3,4].map(k=>`<img src="${I("logow_"+k)}" alt="">`).join("")}</div></div></section>
-<section class="slide end"><div class="tyEn">Thank you</div><div class="fan"><div class="fc f0"><img src="${I("iq_group")}" alt=""></div><div class="fc f1"><img src="${I("imf0")}" alt=""></div><div class="fc f2"><img src="${I("mh_full")}" alt=""></div><div class="fc f3"><img src="${I("ih_bill")}" alt=""></div><div class="fc f4"><img src="${I("mb_booth")}" alt=""></div></div><div class="ebox"><div class="hi up">الختام</div><h2 class="up t1">وما زال للحلم بقية</h2><p class="up t2">شكرًا لاهتمامكم واطلاعكم.</p><div class="eline up t2"><i></i><span class="dm"></span><i></i></div><div class="ct up t3"><a href="https://wa.me/966539358880" target="_blank" rel="noopener"><span class="ci"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.5-4.3A8.5 8.5 0 1 1 20.5 11.6z"/><path d="M9 8.6c0 3.4 2.9 6.4 6.4 6.4l1.2-1.6-2-.9-1 1c-1.3-.5-2.4-1.6-2.9-2.9l1-1-.9-2z"/></svg></span><span><b>واتساب</b><em class="en">0539358880</em></span></a><a href="mailto:raneemalotaib@gmail.com"><span class="ci"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></span><span><b>البريد</b><em class="en">raneemalotaib@gmail.com</em></span></a><a href="https://drive.google.com/file/d/1lKS2OqydLxy46xfa5N6SIHLGJBGWEPru/view?usp=drivesdk" target="_blank" rel="noopener"><span class="ci"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span><span><b>السيرة الذاتية</b><em>CV</em></span></a></div></section>`;
+<section class="slide end"><div class="tyEn">Thank you</div><div class="fan"><div class="fc f0"><img src="${I("aw_solmakers")}" alt=""></div><div class="fc f1"><img src="${I("aw_mofajam")}" alt=""></div><div class="fc f2"><img src="${I("aw_ksuhack")}" alt=""></div><div class="fc f3"><img src="${I("mb_booth")}" alt=""></div><div class="fc f4"><img src="${I("aw_imamhack")}" alt=""></div><div class="fc f5"><img src="${I("aw_industry")}" alt=""></div><div class="fc f6"><img src="${I("aw_qimam")}" alt=""></div></div><div class="ebox"><div class="hi up">الختام</div><h2 class="up t1">وما زال للحلم بقية</h2><p class="up t2">شكرًا لاهتمامكم واطلاعكم.</p><div class="eline up t2"><i></i><span class="dm"></span><i></i></div><div class="ct up t3"><a href="https://wa.me/966539358880" target="_blank" rel="noopener"><span class="ci"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.5-4.3A8.5 8.5 0 1 1 20.5 11.6z"/><path d="M9 8.6c0 3.4 2.9 6.4 6.4 6.4l1.2-1.6-2-.9-1 1c-1.3-.5-2.4-1.6-2.9-2.9l1-1-.9-2z"/></svg></span><span><b>واتساب</b><em class="en">0539358880</em></span></a><a href="mailto:raneemalotaib@gmail.com"><span class="ci"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></span><span><b>البريد</b><em class="en">raneemalotaib@gmail.com</em></span></a><a href="https://drive.google.com/file/d/1lKS2OqydLxy46xfa5N6SIHLGJBGWEPru/view?usp=drivesdk" target="_blank" rel="noopener"><span class="ci"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span><span><b>السيرة الذاتية</b><em>CV</em></span></a></div></section>`;
 
 const track = document.getElementById("track");
 track.innerHTML = h;
