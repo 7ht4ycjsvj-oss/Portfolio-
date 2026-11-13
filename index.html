@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>رنيم العتيبي — Portfolio</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Poppins:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
 <style>
 :root{--ink:#040a18;--navy:#0b1830;--txt:#F4F6FA;--soft:#C9D2E3;--mute:#8C99B5;--orange:#A9C4F0;--red:#6F92D8;--gold:#D9E5F8;
-  --ar:"Alexandria","IBM Plex Sans Arabic",sans-serif;--body:"IBM Plex Sans Arabic",sans-serif;--en:"Poppins",sans-serif;--num:"Cormorant Garamond",serif;
+  --ar:"IBM Plex Sans Arabic",sans-serif;--body:"IBM Plex Sans Arabic",sans-serif;--en:"Inter",sans-serif;--num:"Inter",sans-serif;
   --ease:cubic-bezier(.2,.8,.2,1)}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;overflow:hidden;background:var(--ink);color:var(--txt);font-family:var(--body)}
@@ -288,7 +288,7 @@ p.copy{font-size:clamp(15.5px,1.22vw,18.5px);line-height:2;color:var(--soft);fon
   .about .ghost{font-size:26vw;top:9vh;left:0}
   .about .halo{left:10vw;width:80vw;height:50vh;top:4vh;bottom:auto}
   .about .cut{position:relative;left:auto;bottom:auto;height:44vh;margin:9vh auto 0;display:block;
-    -webkit-mask-image:linear-gradient(180deg,#000 75%,transparent);mask-image:linear-gradient(180deg,#000 75%,transparent)}
+  }
   .about .in{position:relative;inset:auto}
   .acol{position:relative;right:auto;width:auto;padding:0 6vw 130px;overflow:visible;display:block}
   .agrid{grid-template-columns:1fr;gap:22px}
@@ -300,6 +300,57 @@ p.copy{font-size:clamp(15.5px,1.22vw,18.5px);line-height:2;color:var(--soft);fon
 .acol .eyeen,.cert .eyeen,.hdr .eyeen{text-align:right}
 .about .cut{left:2vw;height:84vh}
 @media(max-width:820px){.cert .left .en{display:none}.cert .meta{margin-top:0}.idx li{min-width:0}}
+
+/* === typography pass: IBM Plex Sans Arabic + Inter, no light, no small === */
+body{font-weight:400;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.ar{font-weight:700;line-height:1.35}
+h2.ar{font-size:clamp(32px,3.6vw,56px)}
+.dt{font-size:clamp(38px,4.6vw,72px)!important}
+.cover .name{font-size:clamp(52px,7.6vw,118px);font-weight:700}
+.en{font-weight:500;letter-spacing:.14em}
+.eyeen{font-size:13px;letter-spacing:.2em}
+.ent{font-size:13px}
+.cover .nen{font-size:clamp(13px,1.1vw,16px);letter-spacing:.4em}
+.cover .bl{font-size:13px;letter-spacing:.14em}
+.cover .br{font-size:clamp(17px,1.5vw,22px);font-weight:500}
+p.copy{font-size:clamp(16px,1.2vw,18.5px);line-height:1.95;color:#D3DBEA}
+.top .mark,.top .count{font-size:13px;font-family:var(--en);letter-spacing:.14em}
+.foot{font-size:12.5px}
+.stat b{font-family:var(--en);font-weight:500;font-size:clamp(28px,2.5vw,38px);letter-spacing:-.01em}
+.stat span{font-size:13.5px}
+.meta b{font-family:var(--en);font-weight:500;font-size:30px}.meta span{font-size:13px}
+.work .ttl2{font-size:clamp(28px,2.7vw,42px)}
+.work .center .brand{font-size:20px;font-weight:600;font-family:var(--body)}
+.work .center .ent{font-size:13px}
+.work .center .kind{font-size:13px;letter-spacing:.12em}
+.pill{font-size:13px}
+.open{font-size:14.5px}
+.it .lab b{font-family:var(--body);font-weight:600;font-size:clamp(15px,1.15vw,18px)}
+.it .lab span{font-size:13px}
+.hdr .en{font-size:clamp(14px,1.3vw,18px);letter-spacing:.2em;color:var(--orange)}
+.exp li{font-size:15.5px;font-weight:500}.exp li i,.idx li i{font-family:var(--en);font-weight:500;font-size:13px}
+.idx{font-size:clamp(15px,1.15vw,17px);font-weight:500}
+.chip{font-size:14px;font-weight:500}
+.about h3{font-family:var(--body);font-weight:600;font-size:15px}
+.div ul.l,.idx{font-family:var(--body)}
+.dnum{font-family:var(--en);font-weight:600;-webkit-text-stroke:1px rgba(169,196,240,.12)}
+.lb header b{font-family:var(--body);font-weight:700}
+/* portrait smaller, framed composition */
+.about .cut{left:7vw;height:64vh}
+.about .halo{left:7vw;width:30vw;height:60vh;bottom:-6vh}
+.about .ghost{font-size:clamp(80px,11vw,170px);top:14vh;left:3vw}
+/* closing */
+.fin .fint{font-size:clamp(56px,8vw,128px)!important}
+.fin .finen{font-size:clamp(14px,1.3vw,18px);letter-spacing:.5em;color:var(--orange)}
+.fin .dc{padding-bottom:14vh}
+@media(max-width:820px){
+  .about .cut{height:30vh;margin-top:11vh;filter:drop-shadow(0 0 1px rgba(200,220,255,.7)) drop-shadow(0 0 18px rgba(90,130,230,.4))}
+  .about .halo{border-radius:50%;filter:blur(24px)}
+  .about .halo{width:70vw;left:15vw;height:36vh}
+  .about .ghost{font-size:20vw;top:13vh}
+  .cover .bl{font-size:11.5px}
+  .work .center .kind{display:none}
+}
 </style>
 </head>
 <body>
@@ -442,7 +493,11 @@ h += `<section class="slide partners"><div class="planet low"></div><div class="
     item("pt2","كلية الإعلام × هيئة الأدب","كلية الإعلام والاتصال وهيئة الأدب والنشر"),
     item("pt3","up2up × مداد","فريق up2up التطوعي ونادي مداد الإعلام")].join("")}</div></div></section>
 <section class="slide logos"><div class="in"><div class="hdr"><h2 class="ar">${mask("زيارات نظّمتها")}</h2><div class="en r d1">Institutional Visits</div></div>
-  <div class="lg">${[5,6,7,8,1,2,3,4].map(k=>`<img src="${I("logow_"+k)}" alt="">`).join("")}</div></div></section>`;
+  <div class="lg">${[5,6,7,8,1,2,3,4].map(k=>`<img src="${I("logow_"+k)}" alt="">`).join("")}</div></div></section>
+<section class="slide fin"><div class="planet"></div><div class="orbit"><span></span></div>
+  <div class="dc"><div class="eyeen en r">Raneem Alotaibi — Portfolio 2026</div>
+    <h2 class="ar fint">${mask("شكرًا لكم")}</h2><div class="dline r d1"><span class="dia"></span></div>
+    <div class="en r d2 finen">Thank You</div></div></section>`;
 
 const track = document.getElementById("track");
 track.innerHTML = h;
