@@ -400,6 +400,62 @@ body{background:#050506}
   .stamp{left:14px;bottom:14px}
 }
 @media(max-width:820px){.envs{gap:120px}.env .ph{top:-50px;height:150px}}
+
+/* ===== v14 hard fixes ===== */
+.top{background:linear-gradient(180deg,#050506 0%,#050506 72%,rgba(5,5,6,0) 100%)!important;padding-bottom:34px!important}
+.desk .back::before{display:none}
+.desk .lbl{display:none}
+.ftab2{position:absolute;top:-30px;right:-1px;height:31px;max-width:calc(100% + 2px);padding:0 14px;display:flex;align-items:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  background:var(--panel2);border:1px solid var(--line2);border-bottom:0;border-radius:10px 10px 0 0;font-size:10.5px;color:var(--grn)}
+.desk .back{border-radius:12px 0 12px 12px}
+/* stamp small, clear of text */
+.stamp{left:auto!important;right:auto;top:26px!important;bottom:auto!important;left:24px!important;padding:3px 8px!important;border-width:1.5px!important;transform:rotate(-8deg)!important}
+.stamp b{font-size:10px!important}.stamp span{font-size:6.5px!important;letter-spacing:.06em}
+.trans > div[style*="height"]{display:none}
+/* ===== cover rebuilt ===== */
+.cover .scroll{grid-template-columns:1fr 1.15fr!important;overflow:visible}
+.tunnel{width:min(54vw,94vh)!important;margin-left:-6vw;perspective:520px!important;
+  -webkit-mask-image:radial-gradient(circle at 50% 50%,#000 46%,rgba(0,0,0,.75) 56%,transparent 70%)!important;mask-image:radial-gradient(circle at 50% 50%,#000 46%,rgba(0,0,0,.75) 56%,transparent 70%)!important}
+.tunnel .tz{transform:scale(1.18)}
+.tc{width:92px!important;height:138px!important;left:-46px!important;top:-69px!important;border-radius:4px!important;outline:1px solid rgba(255,255,255,.22)!important;box-shadow:0 0 0 2px #050506,0 0 18px rgba(112,72,232,.18)!important}
+.tc img{filter:saturate(.9) contrast(1.06)!important}
+.floorx{width:560px!important;height:560px!important;left:-280px!important;top:-280px!important;transform:translateZ(-860px)!important;
+  background:radial-gradient(circle,#fff 0%,#e9e3ff 7%,rgba(168,151,255,.92) 16%,rgba(112,72,232,.62) 30%,rgba(70,40,170,.22) 50%,transparent 66%)!important}
+.figwrap{width:34px!important;transform:translate(-50%,-60%)!important}
+.figwrap::after{content:"";position:absolute;left:50%;bottom:-6px;width:70px;height:12px;margin-left:-35px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.65),transparent)}
+.ring2{position:absolute;inset:7%;border-radius:50%;border:1px dashed rgba(242,241,238,.12);animation:swirl 140s linear infinite reverse;pointer-events:none}
+.ring2::before{content:"ARCHIVE 00_1 — RANEEM'S ROOM — FILES IN MOTION — ";position:absolute;top:-8px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--mute);background:#050506;padding:0 10px;white-space:nowrap}
+@media(max-width:820px){
+  .top{padding:16px 6vw 30px!important}
+  .scroll{padding-top:13vh!important}
+  .tunnel{width:112vw!important;margin:-4vh -6vw 0!important;align-self:center}
+  .tunnel .tz{transform:scale(.8)!important}
+  .ring2::before{font-size:8.5px}
+  /* desk: everything stays inside the folder */
+  .desk{height:auto!important;max-height:none!important;aspect-ratio:auto!important;margin:46px 0 10px!important;padding:26px 16px 22px;
+        display:flex!important;justify-content:center;align-items:center;gap:8px;order:2}
+  .desk .back{inset:0!important}
+  .desk .p2{display:none!important}
+  .desk .pp.p1{position:relative!important;left:auto!important;top:auto!important;width:100%!important;transform:rotate(-1.5deg)!important}
+  .desk .tw{position:relative!important;left:auto!important;top:auto!important;bottom:auto!important;width:32%!important}
+  .desk .tw.a{transform:rotate(-4deg)!important}.desk .tw.b{transform:rotate(1deg)!important}.desk .tw.c{transform:rotate(4deg)!important}
+  .ftab2{font-size:9.5px;padding:0 10px}
+}
+
+.stamp{position:relative!important;display:inline-block;top:auto!important;left:auto!important;margin-top:18px}
+.cel.more em{position:static!important}
+.cel.more b{margin-top:10px}
+.env .body{padding-left:82px}
+@media(max-width:820px){
+  .envs{gap:34px!important;margin-top:4vh!important}
+  .env{height:auto}
+  .env .ph{position:relative;left:auto;right:auto;top:auto;margin:0 7% -26px;height:150px;z-index:2}
+  .env .body{position:relative;inset:auto;height:auto;padding:40px 16px 18px 76px}
+  .env b{margin-top:6px}
+}
+@media(min-width:821px){.desk .tw.a{top:26%}.desk .tw.b{top:21%}.desk .tw.c{top:28%}.desk .pp.p2{z-index:1}.desk .back{z-index:0}}
+@media(min-width:821px){.desk .pp img{max-height:40vh;width:100%;object-fit:cover;object-position:top}.desk .p2 img{max-height:30vh}
+.on .desk .p2{transform:translate(-36%,-58%) rotate(6deg)}}
 </style>
 </head>
 <body>
@@ -488,10 +544,10 @@ let fno = 0;
 function fileSlide(f){
   fno++; if (f.g.length) GAL[f.key] = { t: f.t, g: f.g };
   let desk;
-  if (f.tri) desk = `<div class="desk up t1"><div class="back"></div><span class="lbl mono">FILE ${p3(fno)} — ${f.en}</span>
+  if (f.tri) desk = `<div class="desk up t1"><div class="back"><span class="ftab2 mono">FILE ${p3(fno)} — ${f.en}</span></div>
      ${f.tri.map((k,j)=>`<div class="tw ${"abc"[j]}"><img src="${I(k)}" alt=""></div>`).join("")}</div>`;
   else { const im = f.img, bk = f.back || "";
-    desk = `<div class="desk up t1"><div class="back"></div><span class="lbl mono">FILE ${p3(fno)} — ${f.en}</span>
+    desk = `<div class="desk up t1"><div class="back"><span class="ftab2 mono">FILE ${p3(fno)} — ${f.en}</span></div>
      ${bk?`<div class="pp p2"><img src="${I(bk)}" alt=""></div>`:""}
      <div class="pp p1">${fno%2?'<span class="tape"></span>':'<span class="clip"></span>'}<img src="${I(im)}" alt="${f.t}"></div></div>`; }
   const meta = `<dl class="meta3 up t2"><div><dt>الجهة</dt><dd>${f.org}</dd></div><div><dt>نوع الملف</dt><dd>${f.type}</dd></div>${f.st?`<div><dt>الحالة</dt><dd>${f.st}</dd></div>`:""}</dl>`;
@@ -514,10 +570,10 @@ function cabinet(sec, en, ar, sub, items){
 }
 
 const ORB = ["mb_new","mm_cover","iq_cover","ih_cover","pres2","pres1","tq_cover","mh_full","imf0","aw_imamhack","pres4","aw_mofajam","pres3","touch4","mamar4","aw_ksuhack","med1","aw_industry","iq_group","pt1"];
-const LV = [[0,1],[150,.92],[300,.8],[450,.66],[600,.52]];
+const LV = [[0,1],[128,.9],[256,.78],[384,.66],[512,.54],[640,.42]];
 const tunnelCards = () => { let o = "", n = 0;
-  LV.forEach((lv,li) => { for (let j = 0; j < 14; j++) { const k = ORB[(n++) % ORB.length];
-    o += `<div class="tc" style="transform:rotateZ(${j*360/14 + li*12.86}deg) translateZ(${-lv[0]}px) translateY(-232px) rotateX(-90deg);filter:brightness(${lv[1]})"><img src="${I(k)}" alt=""></div>`; } });
+  LV.forEach((lv,li) => { for (let j = 0; j < 16; j++) { const k = ORB[(n++) % ORB.length];
+    o += `<div class="tc" style="transform:rotateZ(${j*22.5 + li*11.25}deg) translateZ(${-lv[0]}px) translateY(-250px) rotateX(-90deg);filter:brightness(${lv[1]})"><img src="${I(k)}" alt=""></div>`; } });
   return o; };
 const PERSON = `<svg class="fig" viewBox="0 0 40 150"><defs><linearGradient id="rf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#08080b" stop-opacity=".55"/><stop offset="1" stop-color="#08080b" stop-opacity="0"/></linearGradient></defs>
   <g fill="#08080b"><ellipse cx="20" cy="8.5" rx="5" ry="6"/><path d="M17.5 13.5h5l.6 2.6c3.4.8 5.6 2.3 6.2 5.2l1.9 34.4-2.6 1.1-.4 12H11.8l-.4-12-2.6-1.1 1.9-34.4c.6-2.9 2.8-4.4 6.2-5.2z"/>
@@ -532,7 +588,7 @@ let h = `
     <div class="q up t2">أشياء لم تكن لتُترك للنسيان.</div>
     <div class="d up t3">مجموعة ${MK("منتقاة")} من الأعمال والتجارب واللحظات التي شكّلت رحلتي في التسويق والإبداع.</div>
   </div>
-  <div class="tunnel"><div class="tz"><div class="base"><div class="floorx"></div></div><div class="tw3">${tunnelCards()}</div><div class="figwrap">${PERSON}</div></div><div class="vign"></div></div>
+  <div class="tunnel"><div class="ring2"></div><div class="tz"><div class="base"><div class="floorx"></div></div><div class="tw3">${tunnelCards()}</div><div class="figwrap">${PERSON}</div></div><div class="vign"></div></div>
 </div><div class="hint">اسحب لتدخل الأرشيف <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg></div></section>
 
 <section class="slide profile" data-sec="s001"><div class="scroll">
