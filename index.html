@@ -490,6 +490,18 @@ body{background:#050506}
   .profile .room img{width:100%;display:block}
 }
 .mk svg{bottom:-.3em;height:.4em}.mk path{stroke-width:2.5;stroke-linecap:square}
+
+/* cover layout v2 */
+.cover .txt{display:flex;flex-direction:column;align-items:flex-start}
+.ctitle{flex-direction:column-reverse!important;align-items:flex-start!important;gap:0!important;margin-top:1.6vh!important}
+.ctitle img{height:clamp(110px,10.5vw,170px)!important;margin:0 -10px 6px 0!important;transform:rotate(-3deg)}
+.ctitle h1{font-size:clamp(52px,5.8vw,96px)!important;line-height:1.05;letter-spacing:-.01em}
+.cover .q{margin-top:2.6vh!important}
+.cover .d{max-width:520px!important}
+.cmeta{display:flex;align-items:center;gap:14px;margin-top:4.5vh;padding-top:16px;border-top:1px solid rgba(242,241,238,.14);width:100%;max-width:520px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--soft);direction:ltr;justify-content:flex-end}
+.cmeta i{width:5px;height:5px;background:var(--grn)}
+@media(max-width:820px){.cmeta{font-size:9.5px;gap:9px;flex-wrap:wrap}.ctitle img{height:100px!important}}
 </style>
 </head>
 <body>
@@ -620,6 +632,7 @@ let h = `
     <div class="ctitle up t1"><h1>غرفة أرشيف</h1><img src="${I("logo_rnt")}" alt="رنيم"></div>
     <div class="q up t2">أشياء لم تكن لتُترك للنسيان.</div>
     <div class="d up t3">مجموعة ${MK("منتقاة")} من الأعمال والتجارب واللحظات التي شكّلت رحلتي في العلاقات العامة والتسويق والإبداع.</div>
+    <div class="cmeta up t4"><span>RANEEM ALOTAIBI</span><i></i><span>PR &amp; MARKETING</span><i></i><span>PORTFOLIO — 2026</span></div>
   </div>
   <div class="tunwrap"><div class="tun2"><div class="glowf"></div><div class="t3d">${tunnelRings()}</div><div class="fig2">${PERSON}</div></div></div>
 </div><div class="hint">اسحب لتدخل الأرشيف <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg></div></section>
