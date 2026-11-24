@@ -489,6 +489,7 @@ body{background:#050506}
   .profile .icard,.profile .room{transform:none!important;width:100%!important;max-width:none!important;justify-self:stretch;margin-left:0;margin-right:0}
   .profile .room img{width:100%;display:block}
 }
+.mk svg{bottom:-.3em;height:.4em}.mk path{stroke-width:2.5;stroke-linecap:square}
 </style>
 </head>
 <body>
@@ -515,13 +516,13 @@ const I = k => IMGS[k] || "";
 const W = (o) => o;
 const ARW = `<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 7L7 17M7 7v10h10"/></svg>`;
 const GRD = `<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="3.5" width="7" height="7" rx="1.2"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.2"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.2"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.2"/></svg>`;
-const MK = t => `<span class="mk">${t}<svg viewBox="0 0 240 14" preserveAspectRatio="none"><path d="M3 9 C 45 3, 90 12, 135 6 S 205 4, 237 8"/></svg></span>`;
+const MK = t => `<span class="mk">${t}<svg viewBox="0 0 240 14" preserveAspectRatio="none"><path d="M2 7 L238 7"/></svg></span>`;
 const RING = t => `<span class="ring">${t}<svg viewBox="0 0 200 60" preserveAspectRatio="none"><path d="M150 6 C 60 -2, 4 14, 6 32 C 8 52, 90 60, 160 52 C 205 46, 204 18, 140 8 C 120 5, 100 6, 86 9"/></svg></span>`;
 const p3 = n => String(n).padStart(3,"0");
 const p2 = n => String(n).padStart(2,"0");
 const GAL = {};
 const SECT = [
- ["000","سجلّ الدخول","التعريف","s000"],["001","بطاقة التعريف","النبذة الشخصية","s001"],["002","الخلفية الأكاديمية","التعليم","s002"],
+ ["000","سجل الدخول","التعريف","s000"],["001","بطاقة التعريف","النبذة الشخصية","s001"],["002","الخلفية الأكاديمية","التعليم","s002"],
  ["003","السجل المهني","الخبرات","s003"],["004","الملفات المحفوظة","المشاريع","s004"],["005","توثيق ميداني","الفعاليات","s005"],
  ["006","سجلات بارزة","الإنجازات","s006"],["007","أدوات العمل","المهارات","s007"],["008","وثائق معتمدة","الشهادات","s008"],["009","باب المراسلات","التواصل","s009"]];
 const secLab = (k) => { const s = SECT.find(x=>x[3]==k); return `<span class="lab"><b>${s[0]}</b>${s[1]}</span>`; };
@@ -618,7 +619,7 @@ let h = `
     <div class="up">${secLab("s000")}</div>
     <div class="ctitle up t1"><h1>غرفة أرشيف</h1><img src="${I("logo_rnt")}" alt="رنيم"></div>
     <div class="q up t2">أشياء لم تكن لتُترك للنسيان.</div>
-    <div class="d up t3">مجموعة ${MK("منتقاة")} من الأعمال والتجارب واللحظات التي شكّلت رحلتي في التسويق والإبداع.</div>
+    <div class="d up t3">مجموعة ${MK("منتقاة")} من الأعمال والتجارب واللحظات التي شكّلت رحلتي في العلاقات العامة والتسويق والإبداع.</div>
   </div>
   <div class="tunwrap"><div class="tun2"><div class="glowf"></div><div class="t3d">${tunnelRings()}</div><div class="fig2">${PERSON}</div></div></div>
 </div><div class="hint">اسحب لتدخل الأرشيف <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg></div></section>
